@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doc → Markdown Converter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Doc <span class="arrow">→</span> Markdown</h1>
+      <p>Convert PDF or Word documents to clean Markdown files</p>
+    </header>
+
+    <main>
+      <div id="dropZone" class="drop-zone">
+        <div class="drop-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="8" y="4" width="36" height="48" rx="4"/>
+            <polyline points="32,4 44,4 44,16 32,16"/>
+            <line x1="16" y1="28" x2="36" y2="28"/>
+            <line x1="16" y1="36" x2="36" y2="36"/>
+            <line x1="16" y1="44" x2="28" y2="44"/>
+            <circle cx="48" cy="48" r="12" fill="#1e293b" stroke="currentColor"/>
+            <line x1="48" y1="42" x2="48" y2="54"/>
+            <line x1="42" y1="48" x2="54" y2="48"/>
+          </svg>
+        </div>
+        <p class="drop-text">Drag &amp; drop your file here</p>
+        <p class="drop-sub">PDF, DOC, or DOCX &mdash; up to 50 MB</p>
+        <label class="browse-btn">
+          Browse Files
+          <input type="file" id="fileInput" accept=".pdf,.doc,.docx" hidden />
+        </label>
+      </div>
+
+      <div id="statusCard" class="status-card hidden">
+        <div id="statusContent"></div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Conversion happens entirely in your browser &mdash; no data is uploaded.</p>
+    </footer>
+  </div>
+
+  <!-- Client-side conversion libraries -->
+  <script src="https://unpkg.com/mammoth@1.6.0/mammoth.browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
